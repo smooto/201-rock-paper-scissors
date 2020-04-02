@@ -1,0 +1,146 @@
+/* imports */
+
+@font-face {
+    font-family: 'Times New Ramen';
+    src: url('./assets/fonts/TimesNewRamen/TimesNewRamen-Regular.woff') format('woff'),
+         url('./assets/fonts/TimesNewRamen/TimesNewRamen-Regular.ttf') format('truetype'),
+         url('./assets/fonts/TimesNewRamen/TimesNewRamen-Regular.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Mitr Light';
+    src: url('./assets/fonts/Mitr/Mitr-Light.ttf') format('truetype');
+}
+
+/* style meta */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* js meta */
+
+input { display: none; } /* hide radio buttons, because uggo */
+
+#results {
+    visibility: hidden; /* hide results div, to be toggled by app.js */
+}
+
+#computer-choice {
+    visibility: hidden; /* hide computer choice image, to be toggled by app.js */
+}
+
+/* layout */
+
+body {
+    background-image: url('./assets/images/background.jpg');
+    background-size: 100%;
+    font-family: 'Mitr Light';
+}
+
+h1 {
+    font-family: 'Times New Ramen', serif;
+    font-size: 4em;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Times New Ramen', serif;
+    font-size: 3em;
+}
+
+a, a:visited {
+    color: pink;
+}
+
+a:hover {
+    color: black;
+    background-color: pink;
+}
+
+.column-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+.row-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#instructions {
+    width: 25vw;
+    height: fit-content;
+    background-color: black;
+    color: white;
+    padding: 1em 2em;
+}
+
+#game {
+    width: 50vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#game div {
+    margin: 1em;
+}
+
+#results {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 1em 2em 0 2em;
+}
+
+#win-lose {
+    font-weight: bold;
+}
+
+button {
+    margin: 2em auto;
+    background-color: pink;
+    border: 4px double black;
+    padding: 1em;
+    font-family: 'Mitr Light';
+}
+
+label {
+    margin: 20px;
+}
+
+.choice-img {
+    height: 150px;
+    width: auto;
+}
+
+footer {
+    padding: 1em 2em;
+    height: fit-content;
+    width: 25vw;
+    background-color: black;
+    color: white;
+}
+
+/* styling for selected radio image */
+
+input[type=radio]:checked + img {
+    filter: drop-shadow(-10px 10px 0px black);
+    animation: wiggle .25s linear 0s infinite alternate none;
+}
+
+@keyframes wiggle {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(11deg); }
+}
