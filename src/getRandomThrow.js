@@ -5,5 +5,5 @@ export default function getRandomThrow() {
     // then, triage into returning choice
     return (randomNumber === 1) ? 'rock'
         : (randomNumber === 2) ? 'paper'
-        : 'scissors';
+            : 'scissors';
 }
