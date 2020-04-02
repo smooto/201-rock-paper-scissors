@@ -53,7 +53,7 @@ function updateStates(outcome) {
     numberOfRounds++;
 
     // increment counters based on outcome
-    if (outcome === 'draw') { numberOfDraws++ }
+    if (outcome === 'draw') { numberOfDraws++; }
     if (outcome === 'win') { numberOfWins++; }
     if (outcome === 'lose') { numberOfLosses++; }
 }
@@ -80,8 +80,6 @@ const runGame = () => {
     // get player and computer choices
     const playerChoice = getPlayerChoice();
     const computerChoice = getRandomThrow();
-    console.log(playerChoice);
-    console.log(computerChoice);
 
     // set and unhide computer throw image based on computer choice
     changeImage(computerChoice);
@@ -89,8 +87,6 @@ const runGame = () => {
 
     // determine outcome of the round
     const outcome = checkResult(playerChoice, computerChoice);
-    console.log(outcome);
-
     // update counters to reflect outcome
     updateStates(outcome);
 
