@@ -1,6 +1,8 @@
 // --- import functions
 import getRandomThrow from './src/getRandomThrow.js';
 import checkResult from './src/checkResult.js';
+import { showElement, hideElement } from './toggle.js';
+
 
 // --- get elements from DOM
 
@@ -83,7 +85,7 @@ const runGame = () => {
 
     // set and unhide computer throw image based on computer choice
     changeImage(computerChoice);
-    computerImage.style.visibility = 'visible';
+    showElement(computerImage);
 
     // determine outcome of the round
     const outcome = checkResult(playerChoice, computerChoice);
@@ -94,7 +96,8 @@ const runGame = () => {
     writeText(outcome);
 
     // unhide results section
-    sectionResults.style.visibility = 'visible';
+    showElement(sectionResults);
+    // sectionResults.style.visibility = 'visible';
 };
 
 const resetGame = () => {
@@ -107,8 +110,8 @@ const resetGame = () => {
     numberOfLosses = 0;
 
     // hide results and computer throw image
-    sectionResults.style.visibility = 'hidden';
-    computerImage.style.visibility = 'hidden';
+    hideElement(sectionResults);
+    hideElement(computerImage);
 };
 
 buttonSubmit.addEventListener('click', runGame);
